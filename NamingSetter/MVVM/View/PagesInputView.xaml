@@ -1,0 +1,31 @@
+﻿<UserControl
+    x:Class="NamingSetter.MVVM.View.PagesInputView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:NamingSetter.MVVM.View"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:NamingSetter.MVVM.ViewModel"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    mc:Ignorable="d">
+    <UserControl.DataContext>
+        <viewModel:PagesInputViewModel />
+    </UserControl.DataContext>
+    <StackPanel>
+        <xctk:IntegerUpDown
+            x:Name="iudPages"
+            Width="70"
+            Height="30"
+            FontSize="20"
+            Text="0"
+            TextAlignment="Center">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="ValueChanged">
+                    <i:InvokeCommandAction Command="{Binding ValueChangedCommand}" CommandParameter="{Binding ElementName=iudPages}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </xctk:IntegerUpDown>
+    </StackPanel>
+</UserControl>
