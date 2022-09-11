@@ -8,5 +8,5 @@
 - Create information for comic
 
 ## Images
-#### Home
+### Home
 ![alt text](./NamingSetter/Image/home.png)
